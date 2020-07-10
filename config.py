@@ -1,20 +1,26 @@
 # Parameters for projection (in cm)
 
-carWidth = 160
-carHeight = 360
-chessboardWidth = 80
-chessboardHeight = 110
-shiftWidth = 100
-shiftHeight = 100
-innerShiftWidth = 34
-innerShiftHeight = 54
-totalWidth = carWidth + 2 * chessboardWidth + 2 * shiftWidth
-totalHeight = carHeight + 2 * chessboardHeight + 2 * shiftHeight
+car_W = 160
+car_H = 200
 
-x1 = shiftWidth + chessboardWidth + innerShiftWidth
-x2 = totalWidth - x1
-y1 = shiftHeight + chessboardHeight + innerShiftHeight
-y2 = totalHeight - y1
+overlapChessboard_W = 115
+overlapChessboard_H = 115
 
-frontShape = (totalWidth, y1)
-leftShape = (totalHeight, x1)
+outerArea_W = 100
+outerArea_H = 100
+
+innerDistance_W = 20
+innerDistance_H = 8
+
+total_W = car_W + 2 * overlapChessboard_W + 2 * outerArea_W + 2*innerDistance_W
+total_H = car_H + overlapChessboard_H + outerArea_H + innerDistance_H
+
+x_left  = outerArea_W + overlapChessboard_W + innerDistance_W
+x_right = x_left + car_W
+y_up    = 0
+y_down  = car_H
+x_middle = total_W//2
+middle_distance = 50
+
+rearShape = (total_W, total_H-y_down)
+sideShape = (total_H, x_left)
