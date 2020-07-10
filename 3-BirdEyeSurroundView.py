@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import yaml
 import os
-from paramsettings import *
+from config import *
 
 # Camera1 = Front-Right
 # Camera2 = Rear-Right
